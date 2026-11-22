@@ -1,0 +1,14 @@
+{
+  "name": "inubit-process-engine-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Konfigurierbares Layout für das Monitoring einer Inubit Process Engine",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

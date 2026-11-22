@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inubit Control Room</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">i</span><div><strong>INUBIT</strong><small>CONTROL ROOM</small></div></div>
+        <nav>
+          <a class="nav-item active" href="#overview"><span>◈</span>Übersicht</a>
+          <a class="nav-item" href="#engine"><span>◌</span>Process Engine</a>
+          <a class="nav-item" href="#queues"><span>≋</span>Queues &amp; Threads</a>
+          <a class="nav-item" href="#logs"><span>≡</span>Monitoring Logs</a>
+          <a class="nav-item" href="#api"><span>⌘</span>API Explorer</a>
+        </nav>
+        <div class="sidebar-footer"><span class="status-dot"></span><div><small>VERBUNDEN MIT</small><strong id="instance-name">Produktion · Berlin</strong></div></div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div><p class="eyebrow">SYSTEM MONITORING / PROCESS ENGINE</p><h1>Guten Morgen, Christian<span class="accent">.</span></h1></div>
+          <div class="top-actions"><div class="last-sync"><span class="live-dot"></span><span>DEMO-LAYOUT</span><small>Stand: gerade eben</small></div><button class="icon-btn" aria-label="Benachrichtigungen">♢<i></i></button><div class="avatar">C</div></div>
+        </header>
+
+        <section id="overview" class="hero-grid">
+          <div class="hero-card card"><div class="card-label">OVERALL HEALTH <span class="info">i</span></div><div class="health-value"><span class="health-icon">✓</span><strong>Operational</strong></div><p>Alle überwachten Kernkomponenten antworten erwartungsgemäß.</p><div class="health-meta"><span><b class="green">●</b> Readiness</span><span><b class="green">●</b> Metrics</span><span><b class="green">●</b> Logs</span></div></div>
+          <div class="metric-card card"><div class="card-label">UPTIME <span class="trend">↗ 0.2%</span></div><strong>14<span class="muted">d</span> 06<span class="muted">h</span> 42<span class="muted">m</span></strong><div class="sparkline"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>Seit 08. Nov 2026, 08:41</small></div>
+          <div class="metric-card card"><div class="card-label">MEMORY USAGE <span class="info">i</span></div><strong>62<span class="muted">%</span></strong><div class="progress"><span style="width:62%"></span></div><div class="range"><small>0 MB</small><small>4.096 MB</small></div><small>2.540 MB used · 1.556 MB free</small></div>
+        </section>
+
+        <section class="section-heading"><div><p class="eyebrow">REAL-TIME SNAPSHOT</p><h2>Engine Overview</h2></div><button class="outline-btn">↻ &nbsp; Refresh preview</button></section>
+        <section id="engine" class="overview-grid">
+          <div class="card chart-card"><div class="card-header"><div><div class="card-label">WORKFLOW THROUGHPUT</div><h3>Ausführungen pro Stunde</h3></div><select><option>Letzte 24 Stunden</option><option>Letzte 7 Tage</option></select></div><div class="chart"><div class="y-labels"><span>800</span><span>600</span><span>400</span><span>200</span><span>0</span></div><div class="chart-area"><div class="gridlines"><i></i><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 700 220" preserveAspectRatio="none" aria-label="Workflow throughput chart"><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b7e7d4" stop-opacity=".65"/><stop offset="1" stop-color="#b7e7d4" stop-opacity="0"/></linearGradient></defs><path d="M0,176 C35,166 42,125 75,143 S115,169 145,128 S188,106 214,121 S245,77 280,92 S314,115 345,74 S380,58 406,78 S446,112 470,85 S506,38 535,65 S568,83 595,53 S632,78 700,24 L700,220 L0,220Z" fill="url(#fill)"/><path d="M0,176 C35,166 42,125 75,143 S115,169 145,128 S188,106 214,121 S245,77 280,92 S314,115 345,74 S380,58 406,78 S446,112 470,85 S506,38 535,65 S568,83 595,53 S632,78 700,24" fill="none" stroke="#157a68" stroke-width="3"/></svg><div class="x-labels"><span>00:00</span><span>04:00</span><span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>Jetzt</span></div></div></div><div class="chart-legend"><span><i class="legend-line"></i>Erfolgreich</span><span><i class="legend-line warn"></i>Fehler</span><b>Ø 486 / h</b></div></div>
+          <div class="card queue-card" id="queues"><div class="card-header"><div><div class="card-label">QUEUE MANAGER</div><h3>Aktuelle Auslastung</h3></div><span class="pill green-pill">HEALTHY</span></div><div class="queue-ring"><div><strong>18</strong><small>in queue</small></div></div><div class="queue-stats"><div><span class="stat-dot teal"></span><span>Running</span><b>12</b></div><div><span class="stat-dot yellow"></span><span>Waiting</span><b>6</b></div><div><span class="stat-dot red"></span><span>Blocked</span><b>0</b></div></div><div class="queue-footer"><span>Blocking queue</span><strong>6 / 500</strong></div></div>
+        </section>
+
+        <section class="lower-grid"><div class="card" id="logs"><div class="card-header"><div><div class="card-label">RECENT EVENTS</div><h3>Letzte Systemereignisse</h3></div><a class="text-link" href="#api">Alle Logs →</a></div><div class="event-list"><div class="event"><span class="event-icon success">✓</span><div><strong>Workflow erfolgreich beendet</strong><small>Order Fulfillment · wf-20481</small></div><time>vor 2 Min.</time></div><div class="event"><span class="event-icon info-icon">i</span><div><strong>Scheduler-Zyklus gestartet</strong><small>Invoice Processing · 128 Items</small></div><time>vor 8 Min.</time></div><div class="event"><span class="event-icon warning">!</span><div><strong>Retry-Limit erreicht</strong><small>Customer Sync · connector.rest</small></div><time>vor 14 Min.</time></div><div class="event"><span class="event-icon success">✓</span><div><strong>Konfiguration geladen</strong><small>System · Server restart check</small></div><time>vor 21 Min.</time></div></div></div>
+          <div class="card capacity-card"><div class="card-header"><div><div class="card-label">RESOURCE CAPACITY</div><h3>Licensed threads</h3></div><span class="info">i</span></div><div class="capacity-number"><strong>24</strong><span>/ 32</span></div><div class="thread-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="empty"></i><i class="empty"></i><i class="empty"></i><i class="empty"></i><i class="empty"></i><i class="empty"></i><i class="empty"></i><i class="empty"></i></div><p>75% of licensed capacity in use</p><div class="capacity-foot"><span>Peak today <b>28</b></span><span>Free <b class="green">8 threads</b></span></div></div></section>
+
+        <section id="api" class="api-section"><div class="section-heading"><div><p class="eyebrow">INTEGRATION BLUEPRINT</p><h2>Relevante REST-API Calls</h2></div><span class="api-note">Layout · noch ohne Live-Aufrufe</span></div><div class="api-grid"><div class="api-card"><span class="method get">GET</span><code>/ready</code><p>Readiness und Erreichbarkeit der Process Engine.</p><span class="api-use">Health check · 200 / 503</span></div><div class="api-card"><span class="method get">GET</span><code>/metrics</code><p>Memory, Blocking Queue, Maintenance und Threads.</p><span class="api-use">Core metrics · JSON</span></div><div class="api-card"><span class="method get">GET</span><code>/log/{logName}</code><p>System-, Queue-, Process- und Connection-Logs.</p><span class="api-use">Events · Filter &amp; Sortierung</span></div><div class="api-card"><span class="method get">GET</span><code>/system</code><p>Serverinformationen und technische Eckdaten.</p><span class="api-use">Inventory · Details</span></div></div></section>
+        <footer>INUBIT CONTROL ROOM <span>·</span> Layout Preview v0.1 <span>·</span> API data will be connected in the next phase</footer>
+      </main>
+    </div>
+    <script src="/config.js"></script><script src="/app.js"></script>
+  </body>
+</html>
